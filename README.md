@@ -5,7 +5,7 @@ Download and save your Jitsi Meet Chats within seconds ⚡
 ## Introduction
 
 -   [Jitsi Meet](https://meet.jit.si/) is an [open-source](https://github.com/jitsi/jitsi-meet) multiplatform voice, video conferencing and instant messaging applications for various platforms.
--   Jitsi does have a feature to download the chat - [Forum - How to save chats?](https://community.jitsi.org/t/how-to-how-to-save-chats-and-speaker-stats/80904) - but it is using plugins and is quite complex.
+-   Jitsi does have a feature (for self-hosted instance) to download the chat - [Forum - How to save chats?](https://community.jitsi.org/t/how-to-how-to-save-chats-and-speaker-stats/80904) - but it is using plugins and is quite complex.
 -   So, I wrote a [script](src/script.js) to download the chat.
 
 ### Motivation
