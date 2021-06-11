@@ -19,7 +19,7 @@ for (let i = 0; i < descendents.length; ++i) {
         
         let userMessage = document.querySelector(query).innerText;
         
-        let stringEntry = user + ": " + JSON.stringify(userMessage);
+        let stringEntry = user + ": " + userMessage;
         jitsiChat.push(stringEntry);
     }
 }
