@@ -1,3 +1,12 @@
+let chatToggleBtn = document.querySelector(
+    ".toolbar-button-with-badge > .toolbox-button > div > .toolbox-icon"
+);
+
+// If the chat window is closed, open it to access the chats;
+if (!chatToggleBtn.classList.contains("toggled")) {
+    chatToggleBtn.click();
+}
+
 let chatContainer = document.querySelector("#chatconversation");
 
 // remote or local groups - to get direct children
@@ -24,6 +33,14 @@ for (let i = 0; i < descendents.length; ++i) {
     }
 }
 
+/* *
+ * Downloads the final chat in a .txt format.
+ *
+ * @param {string} filename - The meeting name to be saved as file name.
+ * @param {string} text - The complete chat in a single string.
+ * @returns {void}
+ */
+
 let download = (filename, text) => {
     var element = document.createElement("a");
 	element.setAttribute(
@@ -35,7 +52,9 @@ let download = (filename, text) => {
 };
 
 
-let meetName = document.querySelector("#videoconference_page > div.subject.visible > div > div.subject-info > span.subject-text").innerText;
+let meetName = document.querySelector(
+    "#videoconference_page > div.subject.visible > div > div.subject-info > span.subject-text"
+).innerText;
 
 let filename = meetName + ".txt";
 
