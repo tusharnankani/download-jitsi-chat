@@ -33,15 +33,22 @@ for (let i = 0; i < descendents.length; ++i) {
     }
 }
 
+let meetName = document.querySelector(
+    "#videoconference_page > div.subject.visible > div > div.subject-info > span.subject-text"
+).innerText;
+
+let finalFileName = meetName + ".txt";
+
+let finalChat = jitsiChat.join("\r\n");
+
 /* *
- * Downloads the final chat in a .txt format.
+ * Downloads the final data in a .txt format.
  *
- * @param {string} filename - The meeting name to be saved as file name.
- * @param {string} text - The complete chat in a single string.
+ * @param {string} filename - The string to be saved as file name.
+ * @param {string} text - The data in a single string.
  * @returns {void}
  */
-
-let download = (filename, text) => {
+((filename, text) => {
     var element = document.createElement("a");
 	element.setAttribute(
 		"href",
@@ -49,15 +56,4 @@ let download = (filename, text) => {
 	);
 	element.setAttribute("download", filename);
 	element.click();
-};
-
-
-let meetName = document.querySelector(
-    "#videoconference_page > div.subject.visible > div > div.subject-info > span.subject-text"
-).innerText;
-
-let filename = meetName + ".txt";
-
-let text = jitsiChat.join("\r\n");
-
-download(filename, text);
+})(finalFileName, finalChat)
